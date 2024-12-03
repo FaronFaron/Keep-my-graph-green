@@ -10,13 +10,9 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
-
       - name: Update date.txt
         run: date '+%Y-%m-%d %H:%M:%S' > date.txt
-
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Update date.txt
-
-      - name: Keepalive Workflow
-        uses: gautamkrishnar/keepalive-workflow@2.0.8
+      - uses: gautamkrishnar/keepalive-workflow@v2
