@@ -1,7 +1,7 @@
 name: Update time cron job
 on:
   schedule:
-    - cron: '1 8 * * *'
+    - cron: '0 * * * *'
   workflow_dispatch:
 jobs:
   cron:
@@ -17,3 +17,6 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Update date.txt
+
+      - name: Keepalive Workflow
+        uses: gautamkrishnar/keepalive-workflow@2.0.8
